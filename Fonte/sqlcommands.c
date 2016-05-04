@@ -271,6 +271,11 @@ int verificaChavePK(char *nomeTabela, column *c, char *nomeCampo, char *valorCam
     for(x = 0; erro == SUCCESS; x++)
         erro = colocaTuplaBuffer(bufferpoll, x, tabela, objeto);
 
+   if(valorCampo == NULL){
+	printf ("erro!!!!!\n");
+	return ERRO_CHAVE_PRIMARIA;
+   }
+
     page = 0;
     for (page = 0; page < PAGES; page++) {
         if (pagina) free(pagina);
